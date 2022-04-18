@@ -11,7 +11,7 @@ public class TestBase {
 
     @BeforeAll
     public static void setUp() {
-        Configuration.startMaximized = true;
+        Configuration.browserSize = "1920x1080";
         Configuration.baseUrl = BASE_URL;
         Configuration.timeout = 7500;
     }

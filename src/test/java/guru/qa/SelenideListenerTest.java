@@ -18,10 +18,10 @@ public class SelenideListenerTest extends TestBase{
         SelenideLogger.addListener("allure", new AllureSelenide());
 
         open("/");
-        $(byName("q")).as("Строка поиска").setValue(REPOSITORY).pressEnter();
-        $(byLinkText(REPOSITORY)).as("Ссылка репозитория").click();
-        $("#issues-tab").as("Список Issues").click();
-        $(withText("#" + ISSUE_NUMBER)).as("Issue с номером" + ISSUE_NUMBER)
-                .parent().parent().as("Заголовок Issue").shouldHave(text(ISSUE_NAME));
+        $(byName("q")).as("РЎС‚СЂРѕРєР° РїРѕРёСЃРєР°").setValue(REPOSITORY).pressEnter();
+        $(byLinkText(REPOSITORY)).as("РЎСЃС‹Р»РєР° СЂРµРїРѕР·РёС‚РѕСЂРёСЏ").click();
+        $("#issues-tab").as("РЎРїРёСЃРѕРє Issues").click();
+        $(withText("#" + ISSUE_NUMBER)).as("Issue СЃ РЅРѕРјРµСЂРѕРј" + ISSUE_NUMBER)
+                .parent().parent().as("Р—Р°РіРѕР»РѕРІРѕРє Issue").shouldHave(text(ISSUE_NAME));
     }
 }

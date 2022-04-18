@@ -13,20 +13,20 @@ public class LambdaStepsTest extends TestBase{
 
     @Test
     public void issueHasCorrectNameTest() {
-        step("Îòêðûòü ãëàâíóþ ñòðàíèöó", () -> {
+        step("ÐžÑ‚ÐºÑ€Ñ‹Ñ‚ÑŒ Ð³Ð»Ð°Ð²Ð½ÑƒÑŽ ÑÑ‚Ñ€Ð°Ð½Ð¸Ñ†Ñƒ", () -> {
                     open("/");
                 });
-        step("Íàéòè ðåïîçèòîðèé " + REPOSITORY, () -> {
+        step("ÐÐ°Ð¹Ñ‚Ð¸ Ñ€ÐµÐ¿Ð¾Ð·Ð¸Ñ‚Ð¾Ñ€Ð¸Ð¹ " + REPOSITORY, () -> {
             $(byName("q")).setValue(REPOSITORY).pressEnter();
         });
-        step("Îòêðûòü ðåïîçèòîðèé " + REPOSITORY, () -> {
+        step("ÐžÑ‚ÐºÑ€Ñ‹Ñ‚ÑŒ Ñ€ÐµÐ¿Ð¾Ð·Ð¸Ñ‚Ð¾Ñ€Ð¸Ð¹ " + REPOSITORY, () -> {
             $(byLinkText(REPOSITORY)).click();
         });
-        step("Îòêðûòü Issues", () -> {
+        step("ÐžÑ‚ÐºÑ€Ñ‹Ñ‚ÑŒ Issues", () -> {
             $("#issues-tab").click();
         });
-        step(String.format("Ïðîâåðèòü, ÷òî ó Issue ñ íîìåðîì %d çíà÷åíèå èìåíè - %s", ISSUE_NUMBER, ISSUE_NAME), () -> {
-            $(withText("# " + ISSUE_NUMBER)).
+        step(String.format("ÐŸÑ€Ð¾Ð²ÐµÑ€Ð¸Ñ‚ÑŒ, Ñ‡Ñ‚Ð¾ Ñƒ Issue Ñ Ð½Ð¾Ð¼ÐµÑ€Ð¾Ð¼ %d Ð·Ð½Ð°Ñ‡ÐµÐ½Ð¸Ðµ Ð¸Ð¼ÐµÐ½Ð¸ - %s", ISSUE_NUMBER, ISSUE_NAME), () -> {
+            $(withText("#" + ISSUE_NUMBER)).
                     parent().parent().shouldHave(text(ISSUE_NAME));
         });
     }

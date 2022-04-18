@@ -15,6 +15,7 @@ public class SampleTest extends TestBase {
         $(byName("q")).setValue(REPOSITORY).pressEnter();
         $(byLinkText(REPOSITORY)).click();
         $("#issues-tab").click();
-        $(withText("#" + ISSUE_NUMBER)).parent().parent().shouldHave(text(ISSUE_NAME));
+        $(withText("#" + ISSUE_NUMBER)).
+                parent().parent().shouldHave(text(ISSUE_NAME));
     }
 }
